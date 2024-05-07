@@ -43,7 +43,7 @@ public class ExportContentFragmentsToCSVServlet extends SlingAllMethodsServlet {
         String csvPath=request.getParameter("csvPath");
         LOGGER.info("folderPath: " + folderPath);
         PrintWriter out = response.getWriter();
-        out.println("{");
+
         JsonWriter jsonWriter = new JsonWriter(response.getWriter());
         jsonWriter.beginObject();
 
@@ -65,6 +65,14 @@ public class ExportContentFragmentsToCSVServlet extends SlingAllMethodsServlet {
 
                     // Generate CSV file path based on model name
                     String csvFilePath = csvPath+"/" + modelName + ".csv";
+                    //check if csvPath directory exist or not
+                    File csvDirectory = new File(csvPath);
+                    if (!csvDirectory.exists()) {
+                        LOGGER.error("CSV path does not exist. Please create it.");
+                        jsonWriter.name("status").value("CSV path does not exist. Please create it.");
+                        jsonWriter.endObject();
+                        return; // Stop further processing
+                    }
 
                     // Check if CSV file already exists
                     boolean fileExists = csvFileExists(csvFilePath);
@@ -78,14 +86,14 @@ public class ExportContentFragmentsToCSVServlet extends SlingAllMethodsServlet {
                     writeDataToCSV(csvFilePath, sampleContentFragment);
 
                 }
-                jsonWriter.name("status");
+                jsonWriter.name("status").value("Data exported to csv file successfully");
             } else {
                 LOGGER.error("Folder resource not found at path: " + folderPath);
-                jsonWriter.name("status").value("Failed to export content fragments to CSV.");
+                jsonWriter.name("status").value("Failed to export content fragments to CSV because content fragment resource not found");
             }
         }
 
-        out.println("\"message\": \"Content fragments exported to CSV successfully.\"");
+//        out.println("\"message\": \"Content fragments exported to CSV successfully.\"");
         out.println("}");
     }
 
