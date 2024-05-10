@@ -1,0 +1,33 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+<sly data-sly-call="${clientlib.css @ categories='mysite.1'}"/>
+</sly>
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.Dq8Text2"/>
+
+    <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12 our_explist">
+                                    <ul>
+                                        <li>${model.pagePath}</li>
+                                        <li>${model.pagePath1}.</li>
+                                        <li>${model.pagePath2}</li>
+                                        <li>${model.pagePath3}</li>
+                                        <br>
+                                        <a href="${model.linkURL}" class="button">Learn More</a>
+                                    </ul>
+                                </div>
+                            </div>   
+                        </div>
+                        <div class="col-md-6"><img class="img-fluid" src="${model.fileReference}" alt="our Fwhyexperience"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+        </div>

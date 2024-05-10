@@ -1,0 +1,42 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+<sly data-sly-call="${clientlib.css @ categories='mysite.1'}"/>
+</sly>
+
+
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.Dq6Card"/>
+<div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+          <div class="row our_services">
+              <div class="col-md-4">
+
+              <div class="card weoffer_lightbg">
+                <img src="${model.fileReferencecard1}" class="card-img-" alt="weoffer">
+                <div class="card-body">
+                  <h5 class="card-title">${model.cardtitle1}</h5>
+                  <p class="card-text"> ${model.carddescription1   @context='html'}
+                </p>
+
+                 </div>
+              </div></div>
+              <br>
+              <div class="col-md-4"><div class="card weoffer_darkbg">
+                <img src="${model.fileReferencecard2}"  alt="weoffer1">
+                <div class="card-body">
+                  <h5 class="card-title">${model.cardtitle2}</h5>
+                  <p class="card-text">${model.carddescription2   @context='html'}
+                </p>
+                </div>
+              </div></div>
+              <div class="col-md-4"><div class="card weoffer_lightbg">
+                <img src="${model.fileReferencecard3}"  alt="weoffer2">
+                <div class="card-body">
+                  <h5 class="card-title">${model.cardtitle3}</h5>
+                  <p class="card-text">${model.carddescription3   @context='html'}
+                </p>
+                </div>
+              </div></div>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
