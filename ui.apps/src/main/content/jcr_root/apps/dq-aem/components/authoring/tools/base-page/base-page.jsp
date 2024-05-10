@@ -49,7 +49,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>${pageTitle} | Geeksdemo  Tools </title>
+        <title>${pageTitle} | Dq-aem </title>
 
         <c:if test="${not empty favicon}">
             <link rel="shortcut icon" href="${favicon}"/>
@@ -76,7 +76,7 @@
                    class="coral3-Shell-homeAnchor"><coral-icon class="coral3-Icon coral3-Shell-homeAnchor-icon coral3-Icon--sizeM coral3-Icon--adobeExperienceManagerColor" icon="adobeExperienceManagerColor" size="M" role="img" aria-label="adobe experience manager color"></coral-icon>
                     <coral-shell-homeanchor-label>Adobe Experience Manager</coral-shell-homeanchor-label>
                 </a>
-                <span style="line-height: 2.375rem;">/ Geeksdemo / ${pageTitle}</span>
+                <span style="line-height: 2.375rem;">/ Dq-aem / ${pageTitle}</span>
             </coral-shell-header-home>
         </coral-shell-header>
 

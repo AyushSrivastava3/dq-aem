@@ -3,6 +3,6 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         jcr:primaryType="nt:unstructured"
-        jcr:title="CSV Importer"
+        jcr:title="CSV Exporter"
         sling:resourceType="dq-aem/components/authoring/tools/generic-csv-exporter"/>
 </jcr:root>
