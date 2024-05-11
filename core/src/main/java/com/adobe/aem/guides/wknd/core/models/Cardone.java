@@ -9,7 +9,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables=Resource.class,defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
 
-public class Dq10Text3 {
+public class Cardone {
 
 	@ValueMapValue
 	private String fileReference;

@@ -1,27 +1,27 @@
 package com.adobe.aem.guides.wknd.core.models;
 
 
+
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables=Resource.class,defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
-public class Dq1BlueHeader {
+
+public class Textone {
 
 	@ValueMapValue
-	private String title;
+	private String text;
 	
 	@ValueMapValue
-	private String email;
+	private String description;
 
-	public String getTitle() {
-		return title;
+	public String getText() {
+		return text;
 	}
 
-	public String getEmail() {
-		return email;
-	}	
-	
-	
+	public String getDescription() {
+		return description;
+	}
 }

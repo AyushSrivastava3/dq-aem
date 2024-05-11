@@ -9,7 +9,7 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 @Model(adaptables=Resource.class,defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
 
-public class Dq6Card {
+public class Cardtwo {
 
 	@ValueMapValue
 	private String cardtitle1;
