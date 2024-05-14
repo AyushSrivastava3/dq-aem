@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:lastModified="{Date}2018-03-06T12:30:09.779+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:description="Transfer assets and initiate training for associated tags"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Smart Tags Training"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <transferprocess
+                jcr:created="{Date}2018-03-06T12:30:09.779+05:30"
+                jcr:createdBy="admin"
+                jcr:description="This process transfers assets to an external service."
+                jcr:lastModified="{Date}2018-03-06T12:30:09.779+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Transfer Assets"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.day.cq.dam.similaritysearch.internal.workflow.smarttags.TransferTrainingDataProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </transferprocess>
+            <trainingprocess
+                jcr:created="{Date}2018-03-06T12:30:09.779+05:30"
+                jcr:createdBy="admin"
+                jcr:description="This process starts training of tags accumulated by Transferring Assets"
+                jcr:lastModified="{Date}2018-03-06T12:30:09.779+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Start Training"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.day.cq.dam.similaritysearch.internal.workflow.smarttags.StartTrainingProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </trainingprocess>
+        </flow>
+    </jcr:content>
+</jcr:root>

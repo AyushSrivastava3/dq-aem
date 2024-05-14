@@ -20,7 +20,7 @@ import com.day.cq.mailer.MessageGatewayService;
 
 @Component(
     service = WorkflowProcess.class, 
-    property = {"process.label=Send Email Notification To Delete Node"}
+    property = {"process.label=Send Email Notification Delete Page"}
 )
 public class CustomStepToSendEmailNode implements WorkflowProcess {
 
@@ -46,7 +46,7 @@ public class CustomStepToSendEmailNode implements WorkflowProcess {
 
             // Set the mail values
             String emailToRecipients = "dileepkandregula4641@gmail.com";
-            String emailCcRecipients = "gopalraikindi55@gmail.com";
+            String emailCcRecipients = "panchakarlanirbhai@gmail.com";
             String subject = "Asset Deleted Notification";
             String body = "The Asset " + item.getWorkflowData().getPayload().toString() + " has been deleted.";
 
@@ -59,7 +59,7 @@ public class CustomStepToSendEmailNode implements WorkflowProcess {
             email.setHostName("smtp.gmail.com");
             email.setSmtpPort(587);
             email.setStartTLSEnabled(true);
-            email.setAuthenticator(new DefaultAuthenticator("nirbhaipanchakarla1@gmail.com", "kmgcsmdhesaksjzj"));
+            email.setAuthenticator(new DefaultAuthenticator("nirbhaipanchakarla1@gmail.com", "gftwivyqafogslrl"));
 
             // Log the email details
             LOG.info("Email details:");
