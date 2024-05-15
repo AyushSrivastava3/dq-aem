@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2024-05-14T16:48:10.101+05:30"
+        cq:lastModifiedBy="admin"
+        cq:styleIds="[1715677990358]"
+        cq:template="/conf/dq-aem/settings/wcm/templates/pp"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="pp-1"
+        sling:resourceType="dq-aem/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="dq-aem/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="dq-aem/components/container"
+                layout="responsiveGrid">
+                <stylesystem
+                    cq:styleIds="[1715685094943,1715685138207]"
+                    jcr:created="{Date}2024-05-14T16:31:24.656+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2024-05-14T16:32:45.597+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="dq-aem/components/stylesystem"
+                    linkURL="/content/dq-aem/us/en/gopal_code_debug"
+                    pagePath="Hi this is ayush"/>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

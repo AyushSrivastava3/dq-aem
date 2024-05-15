@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2024-05-14T15:37:07.281+05:30"
+        cq:lastModifiedBy="admin"
+        cq:styleIds="[1715678124945,1715678245898,1715677990358]"
+        cq:template="/conf/dq-aem/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="stylesystem"
+        sling:resourceType="dq-aem/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="dq-aem/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="dq-aem/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:lastModified="{Date}2024-05-14T14:52:27.041+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="aa"
+                    sling:resourceType="dq-aem/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="dq-aem/components/container"
+                    layout="responsiveGrid">
+                    <stylesystem_227307518
+                        cq:styleIds="[1715679320148,1715679297498]"
+                        jcr:created="{Date}2024-05-14T15:19:13.909+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2024-05-14T15:19:23.721+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="dq-aem/components/stylesystem"
+                        pagePath="Hi this is ayush"/>
+                    <stylesystem_1697275172
+                        jcr:created="{Date}2024-05-14T15:19:50.933+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2024-05-14T15:19:50.933+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="dq-aem/components/stylesystem"/>
+                    <stylesystem
+                        cq:styleIds="[1715679325189,1715679302635]"
+                        jcr:created="{Date}2024-05-14T14:54:30.850+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2024-05-14T15:19:08.232+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="dq-aem/components/stylesystem"
+                        pagePath="Hi this is ayush"/>
+                    <stylesystem_1222567897
+                        jcr:created="{Date}2024-05-14T15:17:24.914+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2024-05-14T15:17:34.410+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="dq-aem/components/stylesystem"
+                        pagePath="Hi this is ayush"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

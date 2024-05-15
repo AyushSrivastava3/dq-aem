@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2024-05-14T16:10:56.939+05:30"
+        cq:lastModifiedBy="admin"
+        cq:styleIds="[1715678028200]"
+        cq:template="/conf/dq-aem/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="style_syetem_page"
+        sling:resourceType="dq-aem/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="dq-aem/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="dq-aem/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:lastModified="{Date}2024-05-14T16:01:13.003+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="dq-aem/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="dq-aem/components/container"
+                    layout="responsiveGrid">
+                    <stylesystem
+                        jcr:created="{Date}2024-05-14T16:00:09.790+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2024-05-14T16:10:56.935+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="dq-aem/components/stylesystem"
+                        pagePath="gt"/>
+                    <text_two
+                        jcr:created="{Date}2024-05-14T16:01:56.109+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2024-05-14T16:06:49.351+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="dq-aem/components/text-two"
+                        description="&lt;p>vughoh87sdyv hvuyyv&lt;/p>&#xd;&#xa;"
+                        pagePath="Hi this is ayush"
+                        text="&lt;p>gfgd6df8g9gh89b hg786g&lt;/p>&#xd;&#xa;"
+                        textIsRich="[true,true]"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

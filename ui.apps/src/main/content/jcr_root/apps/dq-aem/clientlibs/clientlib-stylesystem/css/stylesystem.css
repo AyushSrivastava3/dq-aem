@@ -1,0 +1,68 @@
+.cmp-stylesystem {
+    background-color: red;
+}
+
+.cmp-stylesystem-blue {
+    background-color: blue;
+}
+
+.cmp-stylesystem-grey {
+    background-color: grey;
+}
+
+.cmp-stylesystem-yellow {
+    background-color: yellow;
+}
+
+
+.cmp-stylesystem-dashed {
+    padding: 5px;
+    border: 2px dashed black; /* Added color */
+}
+
+.cmp-stylesystem-dotted {
+    padding: 5px;
+    border: 2px dotted black; /* Added color */
+}
+
+.cmp-stylesystem-solid { /* Fixed typo */
+    padding: 5px;
+    border: 2px solid black; /* Added color */
+}
+
+.cmp-stylesystem-small {
+    padding-bottom: 16px;
+}
+
+.cmp-stylesystem-small-mobile {
+    padding-bottom: 12px;
+}
+
+.cmp-stylesystem-medium {
+    padding-bottom: 24px;
+}
+
+.cmp-stylesystem-medium-mobile {
+    padding-bottom: 20px;
+}
+
+.cmp-stylesystem-large {
+    padding-bottom: 40px;
+}
+
+.cmp-stylesystem-large-mobile {
+    padding-bottom: 32px;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 767px) {
+    .cmp-stylesystem-small {
+        padding-bottom: 12px;
+    }
+    .cmp-stylesystem-medium {
+        padding-bottom: 20px;
+    }
+    .cmp-stylesystem-large {
+        padding-bottom: 32px;
+    }
+}
