@@ -64,17 +64,33 @@ import java.io.IOException;
         }
 )
 public class SampleConfigServlet extends SlingAllMethodsServlet {
+//    @Reference
+//    SampleServiceConfig sampleServiceConfig;
+//
+//    @Override
+//    protected void doGet(SlingHttpServletRequest request,
+//                         SlingHttpServletResponse response) throws ServletException, IOException {
+//
+//        String greeting = sampleServiceConfig.greetingMessage();
+//        String formalGreeting = sampleServiceConfig.formalGreetingMessage();
+//        response.getWriter().write(greeting + "\n" + formalGreeting+"\n");
+//
+//    }
+
+
     @Reference
-    SampleServiceConfig sampleServiceConfig;
+    SampleService sampleService;
+    @Reference
+    AnotherService anotherService;
 
     @Override
     protected void doGet(SlingHttpServletRequest request,
                          SlingHttpServletResponse response) throws ServletException, IOException {
 
-        String greeting = sampleServiceConfig.greetingMessage();
-        String formalGreeting = sampleServiceConfig.formalGreetingMessage();
+        String greeting = sampleService.getGreeting();
+        String formalGreeting = sampleService.getFormalGreeting();
         response.getWriter().write(greeting + "\n" + formalGreeting+"\n");
-
+        response.getWriter().write(anotherService.getCompleteGreeting());
     }
 
 }
