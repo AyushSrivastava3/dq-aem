@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Name Submission</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #cityForm {
+        margin: 20px;
+    }
+    #cityInput {
+        padding: 10px;
+        font-size: 16px;
+        width: 300px;
+    }
+    #submitBtn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    #submitBtn:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+
+<form id="cityForm" action="/bin/details" method="post">
+    <label for="cityInput">Enter City Name:</label><br>
+    <input type="text" id="cityInput" name="cityName" required><br><br>
+    <input type="submit" id="submitBtn" value="Submit">
+</form>
+
+
+<input type="hidden" name="${requestScope['org.apache.sling.auth.core.FormReasonServlet.TOKEN_NAME']}" value="${requestScope['org.apache.sling.auth.core.FormReasonServlet.TOKEN_VALUE']}" />
+
+
+</body>
+</html>

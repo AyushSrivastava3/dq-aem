@@ -44,6 +44,7 @@
                         <configuration>
                             <bnd><![CDATA[
 Import-Package: javax.annotation;version=0.0.0,*
+Export-Package: com.opencsv.*
                                 ]]></bnd>
                         </configuration>
                     </execution>
@@ -90,6 +91,11 @@ Import-Package: javax.annotation;version=0.0.0,*
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.annotation.versioning</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>3.3</version>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>

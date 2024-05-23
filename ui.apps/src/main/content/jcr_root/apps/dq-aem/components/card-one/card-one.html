@@ -1,0 +1,62 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+<sly data-sly-call="${clientlib.css @ categories='mysite.1'}"/>
+</sly>
+
+
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.Cardone"/>
+
+<section class="about_us" id="aboutus">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+
+            <div class="row">
+                <div class="col-md-6"><img class="img-fluid" src="${model.fileReference}" alt="about_us"></div>
+                <div class="col-md-6">
+
+                                      <div class="row">
+                        <div class="col-md-6">
+                        <div class="card">
+                            <img src="${model.fileReference1}" class="img-fluid aboutImg" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title text-center">${model.pagePath}</h5>
+                              <p class="card-text text-center">${model.text  @context='html'}</p>
+                            </div>
+                          </div>
+                          </div>
+
+
+                          <div class="col-md-6">
+                        <div class="card">
+                            <img src="${model.fileReference1}" class="img-fluid aboutImg" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title text-center">${model.pagePath1}</h5>
+                              <p class="card-text text-center">${model.text1  @context='html'}</p>
+                            </div>
+                          </div>
+                          </div>
+
+
+
+
+
+                    </div>
+
+
+
+                    <div class="row">
+
+
+                        
+                    </div>
+                      <br>
+                           <a href="${model.linkURL}" class="button">LEARN MORE</a>
+                </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-1"></div>
+        </div>
+
+        </section>
