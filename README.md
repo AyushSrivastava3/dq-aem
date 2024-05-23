@@ -124,3 +124,21 @@ A ClientLib will consist of the following files and directories:
 The project comes with the auto-public repository configured. To setup the repository in your Maven settings, refer to:
 
     http://helpx.adobe.com/experience-manager/kb/SetUpTheAdobeMavenRepository.html
+
+
+
+
+CONFIGURATIONS NEEDED TO MAKE THE WEATHER TASK SERVLET WORKING :-
+In OSGI configurations (http://localhost:4502/system/console/configMgr), locate “Apache Sling Referrer Filter”. Enable the allow empty property, and remove the post method from filters property.
+
+Step 1: Configure Apache Sling Referrer Filter
+Enable allow empty
+Remove the POST method from filters
+
+
+Step 2 : Configure Adobe Granite CSRF Filter
+In OSGI configurations (http://localhost:4502/system/console/configMgr), locate “Adobe Granite CSRF Filter”. Remove the post method from filters property.
+Remove the POST method from filters
+
+Now after configuring this and save and again if we fetch the Weather task servlet, the servlet would be triggered and it will fetch the weather details from the API accordingly.
+
