@@ -1056,6 +1056,17 @@ Bundle-DocURL:
   <dependencyManagement>
             
     <dependencies>
+
+      <dependency>
+        <groupId>com.opencsv</groupId>
+        <artifactId>opencsv</artifactId>
+        <version>5.6</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.13.0</version>
+      </dependency>
                   
       <!-- OSGi Dependencies -->
                   
