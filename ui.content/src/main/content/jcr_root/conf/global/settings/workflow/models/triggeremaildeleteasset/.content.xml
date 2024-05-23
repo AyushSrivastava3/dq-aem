@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:lastModified="{Date}2024-05-23T15:44:53.599+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="TriggerEmailDeleteAsset"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <initiatorparticipant
+                jcr:created="{Date}2016-12-14T08:11:19.175-05:00"
+                jcr:createdBy="admin"
+                jcr:description="Description of step 1"
+                jcr:lastModified="{Date}2016-12-14T08:11:45.152-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Step 1"
+                sling:resourceType="cq/workflow/components/workflow/initiatorparticipantchooser">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    DYNAMIC_PARTICIPANT="/libs/workflow/scripts/initiator-participant-chooser.ecma"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </initiatorparticipant>
+            <deleteassetworkflow
+                jcr:created="{Date}2024-05-23T15:44:16.539+05:30"
+                jcr:createdBy="admin"
+                jcr:description="Process to delete an asset."
+                jcr:lastModified="{Date}2024-05-23T15:44:16.539+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Delete Asset"
+                sling:resourceType="dam/components/workflow/deleteassetworkflow">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.day.cq.dam.core.process.DeleteAssetProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </deleteassetworkflow>
+            <process
+                jcr:created="{Date}2024-05-23T15:44:23.473+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2024-05-23T15:44:53.593+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Process"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.aem.guides.wknd.core.models.CustomStepToSendEmailAsset"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+        </flow>
+    </jcr:content>
+</jcr:root>

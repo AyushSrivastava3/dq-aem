@@ -126,6 +126,18 @@ The project comes with the auto-public repository configured. To setup the repos
     http://helpx.adobe.com/experience-manager/kb/SetUpTheAdobeMavenRepository.html
 
 
+## Smtp Configuration
+
+* We have to set the smtp configuration for sending mail
+* In this location we have to search [Smtp configuraion](http://localhost:4502/system/console/configMgr) for This "DAY CQ MAIL SERVICE".
+* We have to set the configurations in the smtp server like eclipse. 
+* In eclipse we have mentioned the details Below this step // Set SMTP server settings//
+* And also we have to enable these two also
+* SMTP use SSL
+* SMTP use StartTLS
+
+  
+
 
 
 ## CONFIGURATIONS NEEDED TO MAKE THE WEATHER TASK SERVLET WORKING :-
@@ -141,5 +153,6 @@ In OSGI configurations (http://localhost:4502/system/console/configMgr), locate 
 Remove the POST method from filters
 
 *Now after configuring this and save and again if we fetch the Weather task servlet, the servlet would be triggered and it will fetch the weather details from the API accordingly.
+
 
 

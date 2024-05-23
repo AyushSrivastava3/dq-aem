@@ -20,7 +20,9 @@ import com.day.cq.mailer.MessageGatewayService;
 
 @Component(
     service = WorkflowProcess.class, 
-    property = {"process.label=Send Email Notification To Asset"}
+
+    property = {"process.label=Send Email Notification Delete Asset"}
+
 )
 public class CustomStepToSendEmailAsset implements WorkflowProcess {
 
@@ -59,7 +61,8 @@ public class CustomStepToSendEmailAsset implements WorkflowProcess {
             email.setHostName("smtp.gmail.com");
             email.setSmtpPort(587);
             email.setStartTLSEnabled(true);
-            email.setAuthenticator(new DefaultAuthenticator("nirbhaipanchakarla1@gmail.com", "fvlqtvzmjbypjzwi"));
+            email.setAuthenticator(new DefaultAuthenticator("nirbhaipanchakarla1@gmail.com", "fdkyioeocddvaeji"));
+
 
             // Log the email details
             LOG.info("Email details:");

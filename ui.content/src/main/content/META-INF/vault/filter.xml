@@ -4,4 +4,6 @@
     <filter root="/content/dq-aem" mode="merge"/>
     <filter root="/content/dam/dq-aem/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/dq-aem" mode="merge"/>
+    <filter root="/conf/global" mode="merge"/>
+    <filter root="/var" mode="merge"/>
 </workspaceFilter>
