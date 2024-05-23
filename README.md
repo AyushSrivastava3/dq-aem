@@ -64,3 +64,5 @@ Following these steps, you can successfully create a system user in AEM and map 
 - [User Administration](http://localhost:4502/useradmin)
 - [Felix Console](http://localhost:4502/system/console/configMgr)
 
+## If you not understood the Readme file then follow this link
+- [Youtube Video](https://youtu.be/H_ljzX9B4Q0?si=sHtgFStDLhzcgxl7)
