@@ -1,126 +1,66 @@
-# Sample AEM project template
+# Creating a System User and Mapping to a Bundle in AEM
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+This guide provides step-by-step instructions for creating a system user in Adobe Experience Manager (AEM) and mapping it to a specific service user mapper.
 
-## Modules
+## Prerequisites
 
-The main parts of the template are:
+- Access to AEM instance (typically at http://localhost:4502)
+- Administrative privileges
 
-* core: Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
-* it.tests: Java based integration tests
-* ui.apps: contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, and templates
-* ui.content: contains sample content using the components from the ui.apps
-* ui.config: contains runmode specific OSGi configs for the project
-* ui.frontend: an optional dedicated front-end build mechanism (Angular, React or general Webpack project)
-* ui.tests: Selenium based UI tests
-* all: a single content package that embeds all of the compiled modules (bundles and content packages) including any vendor dependencies
-* analyse: this module runs analysis on the project which provides additional validation for deploying into AEMaaCS
+## Steps
 
-## How to build
+### 1. Create System User
 
-To build all the modules run in the project root directory the following command with Maven 3:
+You can create a system user either by defining it in your application content package or by manually creating it in the CRX Explorer.
 
-    mvn clean install
+#### Manual Creation in CRX Explorer
 
-To build all the modules and deploy the `all` package to a local instance of AEM, run in the project root directory the following command:
+1. Open CRX Explorer:
+[Explorer](http://localhost:4502/crx/explorer/index.jsp).
 
-    mvn clean install -PautoInstallSinglePackage
 
-Or to deploy it to a publish instance, run
+2. Navigate to **User Administration**.
 
-    mvn clean install -PautoInstallSinglePackagePublish
+3. Click on **Create system User** from the top bar.
 
-Or alternatively
+4. Enter the required details for the system user.
 
-    mvn clean install -PautoInstallSinglePackage -Daem.port=4503
+5. Click on the green check box to create the system user.
 
-Or to deploy only the bundle to the author, run
+### 2. Assign Necessary Permissions
 
-    mvn clean install -PautoInstallBundle
+1. Open the User Administration console:
+2. [console](http://localhost:4502/useradmin).
 
-Or to deploy only a single content package, run in the sub-module directory (i.e `ui.apps`)
+3.  Find the newly created system user.
 
-    mvn clean install -PautoInstallPackage
+3. Assign the necessary permissions to the system user based on your application's requirements.
 
-## Testing
+### 3. Define Service User Mapper
 
-There are three levels of testing contained in the project:
+Service user mappers link your system user to a specific service. Follow these steps to define a service user mapper:
 
-### Unit tests
+1. Open the Felix Console:
+[Console] (http://localhost:4502/system/console/configMgr).
 
-This show-cases classic unit testing of the code contained in the bundle. To
-test, execute:
 
-    mvn clean test
+2. Find and configure the **Apache Sling Service User Mapper Service**.
 
-### Integration tests
+3. Add a new entry mapping your service to the newly created system user.
 
-This allows running integration tests that exercise the capabilities of AEM via
-HTTP calls to its API. To run the integration tests, run:
+### Example
 
-    mvn clean verify -Plocal
+Assume you have a service called `my-service` and a system user called `my-system-user`. The configuration would look like:
 
-Test classes must be saved in the `src/main/java` directory (or any of its
-subdirectories), and must be contained in files matching the pattern `*IT.java`.
+my-service=system-user=my-system-user
 
-The configuration provides sensible defaults for a typical local installation of
-AEM. If you want to point the integration tests to different AEM author and
-publish instances, you can use the following system properties via Maven's `-D`
-flag.
+## Conclusion
 
-| Property | Description | Default value |
-| --- | --- | --- |
-| `it.author.url` | URL of the author instance | `http://localhost:4502` |
-| `it.author.user` | Admin user for the author instance | `admin` |
-| `it.author.password` | Password of the admin user for the author instance | `admin` |
-| `it.publish.url` | URL of the publish instance | `http://localhost:4503` |
-| `it.publish.user` | Admin user for the publish instance | `admin` |
-| `it.publish.password` | Password of the admin user for the publish instance | `admin` |
+Following these steps, you can successfully create a system user in AEM and map it to your specific service user mapper. Ensure that the permissions granted to the system user are minimal and only what is necessary for the service to function correctly.
 
-The integration tests in this archetype use the [AEM Testing
-Clients](https://github.com/adobe/aem-testing-clients) and showcase some
-recommended [best
-practices](https://github.com/adobe/aem-testing-clients/wiki/Best-practices) to
-be put in use when writing integration tests for AEM.
+## References
 
-## Static Analysis
+- [CRX Explorer](http://localhost:4502/crx/explorer/index.jsp)
+- [User Administration](http://localhost:4502/useradmin)
+- [Felix Console](http://localhost:4502/system/console/configMgr)
 
-The `analyse` module performs static analysis on the project for deploying into AEMaaCS. It is automatically
-run when executing
-
-    mvn clean install
-
-from the project root directory. Additional information about this analysis and how to further configure it
-can be found here https://github.com/adobe/aemanalyser-maven-plugin
-
-### UI tests
-
-They will test the UI layer of your AEM application using Selenium technology. 
-
-To run them locally:
-
-    mvn clean verify -Pui-tests-local-execution
-
-This default command requires:
-* an AEM author instance available at http://localhost:4502 (with the whole project built and deployed on it, see `How to build` section above)
-* Chrome browser installed at default location
-
-Check README file in `ui.tests` module for more details.
-
-## ClientLibs
-
-The frontend module is made available using an [AEM ClientLib](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/clientlibs.html). When executing the NPM build script, the app is built and the [`aem-clientlib-generator`](https://github.com/wcm-io-frontend/aem-clientlib-generator) package takes the resulting build output and transforms it into such a ClientLib.
-
-A ClientLib will consist of the following files and directories:
-
-- `css/`: CSS files which can be requested in the HTML
-- `css.txt` (tells AEM the order and names of files in `css/` so they can be merged)
-- `js/`: JavaScript files which can be requested in the HTML
-- `js.txt` (tells AEM the order and names of files in `js/` so they can be merged
-- `resources/`: Source maps, non-entrypoint code chunks (resulting from code splitting), static assets (e.g. icons), etc.
-
-## Maven settings
-
-The project comes with the auto-public repository configured. To setup the repository in your Maven settings, refer to:
-
-    http://helpx.adobe.com/experience-manager/kb/SetUpTheAdobeMavenRepository.html
