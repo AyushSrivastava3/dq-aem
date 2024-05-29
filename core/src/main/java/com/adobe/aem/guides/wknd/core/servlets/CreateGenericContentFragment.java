@@ -148,4 +148,3 @@ public class CreateGenericContentFragment extends SlingAllMethodsServlet {
 
     }
 }
-

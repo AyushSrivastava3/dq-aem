@@ -1,3 +1,4 @@
+
 package com.adobe.aem.guides.wknd.core.models;
 
 
@@ -50,3 +51,4 @@ public class SampleContentFragment {
         return properties;
     }
 }
+
