@@ -3,6 +3,9 @@
     <filter root="/apps/dq-aem/clientlibs"/>
     <filter root="/apps/dq-aem/components"/>
     <filter root="/apps/dq-aem/i18n"/>
+    <filter root="/apps/conf"/>
+    <filter root="/apps/var"/>
     <filter root="/apps/dq-aem/content"/>
     <filter root="/apps/cq"/>
+
 </workspaceFilter>
