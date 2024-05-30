@@ -20,8 +20,23 @@ public class JcrEventListener implements EventListener {
 
     @Reference
     SlingRepository slingRepository;
+/*
+SlingRepository slingRepository;
+It looks like you're referencing the SlingRepository interface. This is a key component in Apache Sling, 
+a web framework that is based on JCR  technology. The SlingRepository interface provides methods for accessing
+andmanaging content within the repository, such as creating, reading, updating, and deleting nodes.In a typical 
+usage scenario, you would inject an instance of SlingRepository into your Java code using dependency injection
+frameworks like Spring or OSGi, and then use its methods to interact with the underlying JCR repository,which could 
+be Apache Jackrabbit or another implementation.
+
+ */
 
     @Activate
+/*
+@Activate
+This annotation is used to notify your component that it is now loaded, resolved and ready to provide service. 
+You use this method to do some final setup in your component.
+*/
     public void activate() {
         try {
             log.info("Logging in with service user 'geeksserviceuser'...");
