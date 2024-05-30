@@ -1,0 +1,15 @@
+<sly data-sly-use.searchModel="com.adobe.aem.guides.wknd.core.models.SearchModel">
+    <div>
+        <form id="SearchForm" method="GET">
+            <input type="text" id="pagePath" name="pagePath" value="${SearchModel.pagePath @ context='unsafe'}" placeholder="Search Details" />
+            <button type="submit">Search</button>
+        </form>
+        <div id="searchResults">
+            <sly data-sly-list.page="${SearchModel.foundPages}">
+                <div>
+                    <strong>Title:</strong> <a href="${page.path}.html" target="_blank">${page.title}</a> <br>
+                </div>
+            </sly>
+        </div>
+    </div>
+</sly>
