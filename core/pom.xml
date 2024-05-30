@@ -78,6 +78,26 @@ Export-Package: com.opencsv.*
                     </archive>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>4.2.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Embed-Dependency>poi,poi-ooxml,xmlbeans,commons-collections4,commons-compress,commons-math3</Embed-Dependency>
+                        <Embed-Transitive>true</Embed-Transitive>
+                        <Export-Package>
+                            org.apache.poi.*;version="5.2.3",
+                            org.apache.xmlbeans.*;version="5.1.1",
+                            org.apache.commons.collections4.*;version="4.4",
+                            org.apache.commons.compress.*;version="1.21",
+                            org.apache.commons.math3.*;version="3.6.1"
+                        </Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -215,5 +235,41 @@ Export-Package: com.opencsv.*
             <version>1.4.4</version>
             <scope>test</scope>
         </dependency>
+
+
+
+
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.3</version> <!-- Make sure to use the latest version -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+            <version>5.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.21</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+
     </dependencies>
 </project>
