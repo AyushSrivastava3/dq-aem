@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:lastModified="{Date}2024-05-30T15:39:48.855+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:description="This a Workflow in which it containes three steps &#xd;&#xa;step -1 :-  PROCESS STEP (This step is used to authenticate any Bad words present in the Payload selected)&#xd;&#xa;step 2 :-   PARTICIPANT STEP (this step involves in sending a task to other user in aem, He can aapprove or reject it back)&#xd;&#xa;step 3 :-  PROCESS STEP (this is final step which sends a email to the admin and also the system user who involved in step 2)"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Process-Based-Workflow"
+        sling:resourceType="cq/workflow/components/pages/model"
+        workflowStages="[Initiated,Approval]">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <initiatorparticipant
+                jcr:created="{Date}2016-12-14T08:11:19.175-05:00"
+                jcr:createdBy="admin"
+                jcr:description="Description of step 1"
+                jcr:lastModified="{Date}2016-12-14T08:11:45.152-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Step 1"
+                sling:resourceType="cq/workflow/components/workflow/initiatorparticipantchooser">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    DYNAMIC_PARTICIPANT="/libs/workflow/scripts/initiator-participant-chooser.ecma"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </initiatorparticipant>
+            <process
+                jcr:created="{Date}2024-05-27T17:45:25.958+05:30"
+                jcr:createdBy="admin"
+                jcr:description="This is a process step in which it will validate if there are any words present in the payload. "
+                jcr:lastModified="{Date}2024-05-30T13:18:12.898+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Process"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.aem.guides.wknd.core.models.BadWordValidationProcess"
+                    PROCESS_AUTO_ADVANCE="true"
+                    workflowStage="Initiated"/>
+            </process>
+            <participant
+                jcr:created="{Date}2024-05-28T17:51:57.360+05:30"
+                jcr:createdBy="admin"
+                jcr:description="If there are any bad words please reject the workflow , if it is all good please proceed and complete so that the page will be published"
+                jcr:lastModified="{Date}2024-05-30T13:18:20.235+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Participant"
+                sling:resourceType="cq/workflow/components/model/participant">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PARTICIPANT="gopal"
+                    workflowStage="Approval"/>
+            </participant>
+            <process_1843509066
+                jcr:created="{Date}2024-05-29T18:59:05.275+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2024-05-30T13:18:24.792+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Process"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.aem.guides.wknd.core.models.CustomEmailNotificationProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_1843509066>
+        </flow>
+    </jcr:content>
+</jcr:root>
