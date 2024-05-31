@@ -152,7 +152,11 @@ Remove the POST method from filters
 In OSGI configurations (http://localhost:4502/system/console/configMgr), locate “Adobe Granite CSRF Filter”. Remove the post method from filters property.
 Remove the POST method from filters
 
-*Now after configuring this and save and again if we fetch the Weather task servlet, the servlet would be triggered and it will fetch the weather details from the API accordingly.
+* Now after configuring this and save and again if we fetch the Weather task servlet, the servlet would be triggered and it will fetch the weather details from the API accordingly.
 
 
+
+## CONFIGURATIONS NEEDED TO MAKE THE PROCESS BASED WORKFLOW TASK WORKING :-
+* Step 1 :-We need to create a user with any name so that we should mention this user in our participant step in the workflow model (this make sure that after the process based step is done) an email will be sent to this user email id and workflow will be executed succesfully.
+* Step 2 :- We also need to created loggers for both the backend classes which will be helpful for debugging. So in the logs we can verify our changes which is validating any bad words present in the payload and also the participant step which will have details regarding sending email to the user
 
