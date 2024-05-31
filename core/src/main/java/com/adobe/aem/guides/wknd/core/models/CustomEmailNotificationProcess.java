@@ -55,15 +55,15 @@ public class CustomEmailNotificationProcess implements WorkflowProcess {
             }
 
             // Retrieve the email addresses of the users from their profiles
-            String adminEmail = getEmailFromProfile(resourceResolver, "/home/users/s/sUKqHTdZvGjF_KJoEPGr/profile");
-            String gopalEmail = getEmailFromProfile(resourceResolver, "/home/users/V/Vcbpeswy-P_2L7ux6qTb/profile");
+            String adminEmail = getEmailFromProfile(resourceResolver, "/home/users/0/0MTNVilt6M4Ym3nT6nLR/profile");
+            String gopalEmail = getEmailFromProfile(resourceResolver, "/home/users/2/2BidnW5LlokibchlIBUI/profile");
 
             // Set up the Email message
             Email email = new SimpleEmail();
             email.setHostName("smtp.gmail.com");
             email.setSmtpPort(587);
             email.setStartTLSEnabled(true);
-            email.setAuthenticator(new DefaultAuthenticator("nirbhaipanchakarla1@gmail.com", "fdkyioeocddvaeji"));
+            email.setAuthenticator(new DefaultAuthenticator("nirbhaipanchakarla1@gmail.com", "dtumzowlaunswlzp"));
 
             // Set the mail values
             email.addTo(adminEmail);

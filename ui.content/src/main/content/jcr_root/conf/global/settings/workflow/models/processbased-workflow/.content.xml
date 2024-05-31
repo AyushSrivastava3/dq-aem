@@ -3,14 +3,13 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/libs/settings/wcm/designs/default"
-        cq:lastModified="{Date}2024-05-30T15:39:48.855+05:30"
+        cq:lastModified="{Date}2024-05-30T17:47:09.506+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/libs/cq/workflow/templates/model"
-        jcr:description="This a Workflow in which it containes three steps &#xd;&#xa;step -1 :-  PROCESS STEP (This step is used to authenticate any Bad words present in the Payload selected)&#xd;&#xa;step 2 :-   PARTICIPANT STEP (this step involves in sending a task to other user in aem, He can aapprove or reject it back)&#xd;&#xa;step 3 :-  PROCESS STEP (this is final step which sends a email to the admin and also the system user who involved in step 2)"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Process-Based-Workflow"
+        jcr:title="ProcessBased-Workflow"
         sling:resourceType="cq/workflow/components/pages/model"
-        workflowStages="[Initiated,Approval]">
+        workflowStages="[Initiated,In process,Approval]">
         <flow
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys">
@@ -29,10 +28,10 @@
                     PROCESS_AUTO_ADVANCE="true"/>
             </initiatorparticipant>
             <process
-                jcr:created="{Date}2024-05-27T17:45:25.958+05:30"
+                jcr:created="{Date}2024-05-30T17:39:19.417+05:30"
                 jcr:createdBy="admin"
-                jcr:description="This is a process step in which it will validate if there are any words present in the payload. "
-                jcr:lastModified="{Date}2024-05-30T13:18:12.898+05:30"
+                jcr:description="This is a process step in which it will validate is there any words present in the payload"
+                jcr:lastModified="{Date}2024-05-30T17:44:42.148+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Process"
@@ -44,10 +43,10 @@
                     workflowStage="Initiated"/>
             </process>
             <participant
-                jcr:created="{Date}2024-05-28T17:51:57.360+05:30"
+                jcr:created="{Date}2024-05-30T17:39:26.203+05:30"
                 jcr:createdBy="admin"
-                jcr:description="If there are any bad words please reject the workflow , if it is all good please proceed and complete so that the page will be published"
-                jcr:lastModified="{Date}2024-05-30T13:18:20.235+05:30"
+                jcr:description="If there are any bad words please reject the workflow , if it is all good please proceed and approve so that the page will be published "
+                jcr:lastModified="{Date}2024-05-30T17:45:48.038+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Participant"
@@ -55,12 +54,13 @@
                 <metaData
                     jcr:primaryType="nt:unstructured"
                     PARTICIPANT="gopal"
-                    workflowStage="Approval"/>
+                    workflowStage="In process"/>
             </participant>
-            <process_1843509066
-                jcr:created="{Date}2024-05-29T18:59:05.275+05:30"
+            <process_1225914439
+                jcr:created="{Date}2024-05-30T17:39:32.173+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2024-05-30T13:18:24.792+05:30"
+                jcr:description="It notifies the worklow initiator and also payload creator user through email using SMTP server."
+                jcr:lastModified="{Date}2024-05-30T17:47:09.498+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Process"
@@ -68,8 +68,9 @@
                 <metaData
                     jcr:primaryType="nt:unstructured"
                     PROCESS="com.adobe.aem.guides.wknd.core.models.CustomEmailNotificationProcess"
-                    PROCESS_AUTO_ADVANCE="true"/>
-            </process_1843509066>
+                    PROCESS_AUTO_ADVANCE="true"
+                    workflowStage="Approval"/>
+            </process_1225914439>
         </flow>
     </jcr:content>
 </jcr:root>
