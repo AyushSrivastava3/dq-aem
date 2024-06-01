@@ -3,16 +3,16 @@
     jcr:isCheckedOut="{Boolean}true"
     jcr:mixinTypes="[mix:referenceable,mix:versionable]"
     jcr:primaryType="dam:Asset"
-    jcr:uuid="93bc433f-57c2-48b8-a3bf-0bd2c1d52e39">
+    jcr:uuid="a6f7782f-58d8-4e22-a023-0f4e74627912">
     <jcr:content
-        cq:name="car-model-cf-1"
+        cq:name="car-model-cf"
         cq:parentPath="/content/dam/dq-aem"
-        jcr:lastModified="{Date}2024-06-01T11:55:00.562+05:30"
+        jcr:lastModified="{Date}2024-06-01T12:51:19.648+05:30"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent"
         jcr:title="car-model-cf"
         contentFragment="{Boolean}true"
-        lastFragmentSave="{Date}2024-06-01T11:55:00.562+05:30">
+        lastFragmentSave="{Date}2024-06-01T12:51:19.648+05:30">
         <data
             cq:model="/conf/dq-aem/settings/dam/cfm/models/car-cf-model"
             jcr:primaryType="nt:unstructured">
@@ -20,11 +20,11 @@
                 jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
                 jcr:primaryType="nt:unstructured"
                 propertyID="001"
-                propertyID_x0040_LastModified="{Date}2024-06-01T11:55:00.547+05:30"
+                propertyID_x0040_LastModified="{Date}2024-06-01T12:51:19.623+05:30"
                 text="cars"
-                text_x0040_LastModified="{Date}2024-06-01T11:55:00.548+05:30"
+                text_x0040_LastModified="{Date}2024-06-01T12:51:19.625+05:30"
                 title="nano"
-                title_x0040_LastModified="{Date}2024-06-01T11:55:00.547+05:30"/>
+                title_x0040_LastModified="{Date}2024-06-01T12:51:19.624+05:30"/>
         </data>
         <metadata
             jcr:mixinTypes="[cq:Taggable]"
