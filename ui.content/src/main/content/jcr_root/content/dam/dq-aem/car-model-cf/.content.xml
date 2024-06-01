@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="93bc433f-57c2-48b8-a3bf-0bd2c1d52e39">
+    <jcr:content
+        cq:name="car-model-cf-1"
+        cq:parentPath="/content/dam/dq-aem"
+        jcr:lastModified="{Date}2024-06-01T11:55:00.562+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="car-model-cf"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2024-06-01T11:55:00.562+05:30">
+        <data
+            cq:model="/conf/dq-aem/settings/dam/cfm/models/car-cf-model"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                propertyID="001"
+                propertyID_x0040_LastModified="{Date}2024-06-01T11:55:00.547+05:30"
+                text="cars"
+                text_x0040_LastModified="{Date}2024-06-01T11:55:00.548+05:30"
+                title="nano"
+                title_x0040_LastModified="{Date}2024-06-01T11:55:00.547+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
