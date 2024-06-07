@@ -53,23 +53,7 @@ public class ReportGeneratorService implements Runnable {
         boolean scheduler_concurrent() default false;
     }
 
-    @Activate
-    protected void activate(Config config) {
-        scheduleJob(config);
-    }
-
-    private void scheduleJob(Config config) {
-        try {
-            ScheduleOptions options = scheduler.EXPR(config.scheduler_expression())
-                    .name("com.example.aem.service.ReportGeneratorService")
-                    .canRunConcurrently(config.scheduler_concurrent());
-
-            scheduler.schedule(this, options);
-            log.info("Scheduled ReportGeneratorService with expression: {}", config.scheduler_expression());
-        } catch (Exception e) {
-            log.error("Error scheduling job", e);
-        }
-    }
+    
 
     @Override
     public void run() {
