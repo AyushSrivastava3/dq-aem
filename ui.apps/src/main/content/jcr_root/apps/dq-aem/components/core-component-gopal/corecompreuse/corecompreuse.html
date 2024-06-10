@@ -1,0 +1,32 @@
+<div data-sly-use.myModel="com.adobe.aem.guides.wknd.core.models.Corecomponent">
+    <h2>${myModel.title @ context='html'}</h2>
+    <p> ${myModel.text @ context='html'}</p>
+        <p> ${myModel.description @ context='html'}</p>
+        <img src="${myModel.fileReference}" alt="Image Name" width="300" height="200">
+
+    
+    <p>
+        <sly data-sly-test="${myModel.linkURL}">
+            Link URL: <a href="${myModel.linkURL}">${myModel.linkURL}</a>
+        </sly>
+        <sly data-sly-test="${!myModel.linkURL}">
+            No link URL provided.
+        </sly>
+    </p>
+    
+    <p>ID: ${myModel.id}</p>
+    
+    <p>
+        Checkbox is 
+        <sly data-sly-test="${myModel.checkbox}">
+            checked
+        </sly>
+        <sly data-sly-test="${!myModel.checkbox}">
+            not checked
+        </sly>
+    </p>
+    
+    <p>Selected Radio Option: ${myModel.radiogroup}</p>
+    <p>Selected Dropdown Option: ${myModel.dropdown}</p>
+    <p>Date: ${myModel.datepicker}</p>
+</div>
