@@ -9,7 +9,7 @@
     
     <cq:dialog
         jcr:primaryType="cq:Dialog"
-        title="My New Component"
+        title="My New Component in dev10"
         xtype="dialog"
         width="600"
         height="400">
