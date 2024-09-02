@@ -1,1 +1,19 @@
-File not found
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:primaryType="cq:Component"
+    jcr:title="My New Component"
+    jcr:description="Description of my new component"
+    componentGroup="My Components Group">
+
+    <cq:dialog
+        jcr:primaryType="cq:Dialog"
+        title="springboot component"
+        xtype="dialog"
+        width="600"
+        height="400">
+        <!-- Dialog configuration goes here -->
+    </cq:dialog>
+
+</jcr:root>
